@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="./src/script.js" defer></script>
+    <title>App</title>
+</head>
+<body>
+    <header>
+        <a href="#">Chuck Norris Jokes</a>
+    </header>
+    <main>
+        <!-- Section for filtring the jokes -->
+        <section id="filtring">
+            <!-- Filter selection, by search or categories. The default is search-->
+            <label for="filter">Filter by: </label>
+            <select name="filter" id="filter">
+                <option value="search" selected>search</option>
+                <option value="category">category</option>
+            </select>
+            <!-- If element isn't selected, it will be masked (class='mask'). 
+                The default is #categories 'cause the filter is search -->
+            <input type="text" id="text-to-search" placeholder="Type your search here">
+            <select id="categories" class="mask">
+                <option value="" selected>Any</option>
+                <!-- All the catégories will be added here with javascript -->
+            </select>
+            <button id="btn-generate">Generate</button>
+        </section>
+        <p id="instruction">Type 'r' to refresh automaticly a new joke</p>
+        <section id="fact-generated">
+            <p id="text-generated">Here is the joke from Chuck Norris</p>
+            <!-- I would like to make a random emoji here, if everyone accept -->
+            <p id="emoji-generated">🤣🤣🤣</p>
+        </section>
+    </main>
+    <footer>
+        <p>Project made by Toucans Team 09</p>
+        <p>Source code: <a href="https://github.com/chingu-voyages/v42-toucans-team-09">www.github.com</a></p>
+    </footer>
+</body>
+</html>
