@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.background img {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* ======== HEADER ======== */
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 0;
+  color: rgb(250, 247, 215);
+}
+
+.header-icon {
+  height: 60px;
+  margin: 0 16px;
+}
+
+/* ======== MAIN SECTION ======== */
+
+main {
+  width: 40vw;
+  margin: 0 auto;
+}
+
+.chuck-img-container {
+  text-align: center;
+}
+
+.chuck-img-container img {
+  height: 220px;
+  margin: 20px 0;
+}
+
+.quotes-box {
+  width: 100%;
+  height: 180px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+}
+
+.random-btn-container {
+  width: 100%;
+  text-align: center;
+  margin: 16px 0;
+}
+
+.generate-section {
+  display: flex;
+  justify-content: space-around;
+}
+
+.generate-section > * {
+  width: 160px;
+}
+
+.random-btn:hover,
+.generate-btn:hover {
+  cursor: pointer;
+  background-color: rgba(44, 99, 64, 0.8);
+}
+
+select:hover {
+  cursor: pointer;
+}
+
+.btn {
+  padding: 10px 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: rgba(29, 65, 42, 0.8);
+  color: rgb(250, 247, 215);
+}
+
+/* ======== FOOTER ======== */
+
+footer {
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: rgb(250, 247, 215);
+  width: 100%;
+  padding: 10px 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+a {
+  color: rgb(250, 247, 215);
+}
+
+/* ======== MEDIA QUERIES ======== */
+
+@media only screen and (max-width: 580px) {
+  main {
+    width: 90%;
+  }
+  .generate-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .generate-btn {
+    margin: 10px 0;
+  }
+}
