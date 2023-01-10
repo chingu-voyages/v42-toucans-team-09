@@ -7,6 +7,7 @@
     <title>Chuck Norris Facts</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
     <link rel="stylesheet" href="styles/styles.css" />
+    <script src="./src/script.js" defer></script>
     <!--google icon to change background-->
     <link
       rel="stylesheet"
@@ -41,21 +42,8 @@
         </div>
 
         <div class="generate-section">
-          <select name="categories" class="btn">
-            <option value="">Choose a category</option>
-            <option>Animal</option>
-            <option>Career</option>
-            <option>Celebrity</option>
-            <option>Dev</option>
-            <option>Fashion</option>
-            <option>Food</option>
-            <option>History</option>
-            <option>Money</option>
-            <option>Movie</option>
-            <option>Music</option>
-            <option>Science</option>
-            <option>Sport</option>
-            <option>Travel</option>
+          <select name="categories" class="btn" id="categories">
+            <option value="Any" selected>Any</option>
           </select>
 
           <button class="btn generate-btn">GENERATE</button>
