@@ -14,3 +14,7 @@ in your `readme` feel free to replace the text we've provided here.
 > Own it & Make it your Own!
 
 Hi, everybody, this is the test message
+
+**Quote Generator App** (Chuck Norris)
+
+V1 ➡️ Deploying MVP app on staging with a function to generate random quotes, by search, and by categories
