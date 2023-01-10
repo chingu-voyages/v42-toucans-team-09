@@ -108,3 +108,4 @@ function apiCall(url) {
     })
     .catch((error) => handleErrors(error));
 }
+
