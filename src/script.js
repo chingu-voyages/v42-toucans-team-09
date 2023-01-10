@@ -7,7 +7,8 @@ changeBackground.addEventListener("click", () => {
   changeBackground.classList.toggle("nightlight");
   if (changeBackground.classList.contains("nightlight")) {
     changeBackground.textContent = "sunny";
-    document.body.style.backgroundImage = "url('')";
+    document.body.style.backgroundImage =
+      "url('images/night-desert-background.png')";
   } else {
     changeBackground.textContent = "nightlight";
     document.body.style.backgroundImage = "url('images/desert-background.jpg')";
