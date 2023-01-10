@@ -1,17 +1,15 @@
 const urlRandom = "https://api.chucknorris.io/jokes/random";
+const categoriesUrl = "https://api.chucknorris.io/jokes/categories";
 const changeBackground = document.querySelector("#change-background");
 const randomButton = document.querySelector("#random-btn");
 const quotes = document.querySelector("#quotes-text");
 const categorySelect = document.getElementById("categories");
 let allCategories = [];
 
+refreshAvailableCategories()
+
 categorySelect.addEventListener("change", () => {
-  // Get all categories available from API
-  fetchCategories().then((categories) => {
-    allCategories = categories;
-    // filter categories and display it to the screen
-    displayCategories();
-  });
+  refreshAvailableCategories();
 });
 
 changeBackground.addEventListener("click", () => {
@@ -52,7 +50,7 @@ function handleErrors(error) {
  */
 async function fetchCategories() {
   try {
-    let res = await fetch("https://api.chucknorris.io/jokes/categories");
+    let res = await fetch(categoriesUrl);
     return await res.json();
   } catch (err) {
     handleErrors(err);
@@ -75,6 +73,19 @@ function displayCategories() {
     option.textContent = category;
     categorySelect.appendChild(option);
   }
+}
+
+/**
+ * Refreshes the available categories from Chunck Norris API
+ * and displays them to the screen
+ */
+function refreshAvailableCategories() {
+  // Get all categories available from API
+  fetchCategories().then((categories) => {
+    allCategories = categories;
+    // filter categories and display it to the screen
+    displayCategories();
+  });
 }
 
 function showQuote(result, url) {
