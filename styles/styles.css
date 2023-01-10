@@ -35,6 +35,11 @@ body {
 .change-background .icon {
   font-size: 30px;
 }
+
+.masked {
+  display: none;
+}
+
 /* ======== HEADER ======== */
 
 header {
@@ -63,11 +68,15 @@ main {
 }
 
 .chuck-img-container img {
-  height: 220px;
+  height: 135px;
   margin: 20px 0;
 }
 
 .quotes-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
   width: 100%;
   height: 180px;
   background-color: rgba(0, 0, 0, 0.7);
@@ -84,6 +93,8 @@ main {
 .generate-section {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  gap: 1.25rem;
 }
 
 .generate-section > * {
@@ -106,6 +117,33 @@ select:hover {
   border: none;
   background-color: rgba(29, 65, 42, 0.8);
   color: rgb(250, 247, 215);
+}
+
+input.btn {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.random-btn,
+.generate-btn {
+  background-color: rgba(35, 60, 40);
+}
+
+.dark-btn {
+  background-color: rgb(193 69 104);
+}
+
+.dark-select-btn {
+  background-color: rgb(82 33 54);
+}
+
+.dark-btn:hover {
+  opacity: 0.8;
+  background-color: rgb(60, 20, 35);
+}
+
+.filter-label{
+  color: white;
+  white-space: nowrap;
 }
 
 /* ======== FOOTER ======== */

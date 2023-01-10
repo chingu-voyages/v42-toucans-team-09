@@ -2,11 +2,17 @@ const urlRandom = "https://api.chucknorris.io/jokes/random";
 const categoriesUrl = "https://api.chucknorris.io/jokes/categories";
 const changeBackground = document.querySelector("#change-background");
 const randomButton = document.querySelector("#random-btn");
+const generateButton = document.querySelector("#generate-btn");
 const quotes = document.querySelector("#quotes-text");
 const categorySelect = document.getElementById("categories");
+const filterSelect = document.getElementById("filter");
+const searchInput = document.getElementById("text-to-search");
 let allCategories = [];
 
-refreshAvailableCategories()
+// Initialize the first maked element with the selected filter
+categorySelect.classList.add("masked");
+
+filterSelect.addEventListener("change", () => switchFilterOption());
 
 categorySelect.addEventListener("change", () => {
   refreshAvailableCategories();
@@ -18,9 +24,19 @@ changeBackground.addEventListener("click", () => {
     changeBackground.textContent = "sunny";
     document.body.style.backgroundImage =
       "url('images/night-desert-background.png')";
+    // Change background color btn in dark mode
+    randomButton.classList.add('dark-btn');
+    generateButton.classList.add('dark-btn');
+    filterSelect.classList.add('dark-select-btn');
+    categorySelect.classList.add('dark-select-btn');
   } else {
     changeBackground.textContent = "nightlight";
     document.body.style.backgroundImage = "url('images/desert-background.jpg')";
+    // Change background color btn to light mode
+    randomButton.classList.remove('dark-btn');
+    generateButton.classList.remove('dark-btn');
+    filterSelect.classList.remove('dark-select-btn');
+    categorySelect.classList.remove('dark-select-btn');
   }
 });
 
@@ -86,6 +102,20 @@ function refreshAvailableCategories() {
     // filter categories and display it to the screen
     displayCategories();
   });
+}
+
+/**
+ * Switches filter to display searchInput or categorySelect
+ */
+function switchFilterOption() {
+  if (filterSelect.selectedIndex === 0) {
+    searchInput.classList.remove("masked");
+    categorySelect.classList.add("masked");
+  } else {
+    searchInput.classList.add("masked");
+    categorySelect.classList.remove("masked");
+    refreshAvailableCategories()
+  }
 }
 
 function showQuote(result, url) {

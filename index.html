@@ -42,13 +42,19 @@
         </div>
 
         <div class="generate-section">
+          <label for="filter" class="filter-label">Filter by: </label>
+          <select name="filter" class="btn" id="filter">
+            <option value="search" selected>Search</option>
+            <option value="categories">Categories</option>
+          </select>
+
           <select name="categories" class="btn" id="categories">
             <option value="Any" selected>Any</option>
           </select>
 
-          <button class="btn generate-btn">GENERATE</button>
+          <input type="text" class="btn" id="text-to-search" placeholder="Type your search here" />
 
-          <input type="text" class="btn" placeholder="Or input some text..." />
+          <button class="btn generate-btn" id="generate-btn">GENERATE</button>
         </div>
       </div>
     </main>
