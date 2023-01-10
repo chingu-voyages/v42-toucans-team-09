@@ -1,7 +1,7 @@
 const categorySelect = document.getElementById("categories");
 let allCategories = [];
 
-// Get all categories avaible from API
+// Get all categories available from API
 fetchCategories().then((categories) => {
     allCategories = categories
     // filter categories and display it to the screen
