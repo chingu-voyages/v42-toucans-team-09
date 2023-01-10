@@ -9,15 +9,32 @@
 html {
   font-family: "Space Grotesk", sans-serif;
 }
+/* add image as background */
 
-.background img {
+body {
+  background-image: url(../images/desert-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+/* .background img {
   position: absolute;
   width: 100vw;
   height: 100vh;
   object-fit: cover;
   z-index: -1;
+} */
+
+.change-background {
+  position: absolute;
+  right: 20px;
+  top: 20px;
 }
 
+.change-background .icon {
+  font-size: 30px;
+}
 /* ======== HEADER ======== */
 
 header {
@@ -55,6 +72,7 @@ main {
   height: 180px;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
+  color: white;
 }
 
 .random-btn-container {
@@ -122,3 +140,4 @@ a {
     margin: 10px 0;
   }
 }
+
