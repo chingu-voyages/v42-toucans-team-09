@@ -161,17 +161,18 @@ function checkSingleQuote(result) {
 function selectQuotFromObject(result) {
   /**When we get the object with many facts from input search we choose the random fact from the
     random integers */
-
+  const results = result;
   //call function for random integers
+
   const randomInt = getRandomInt(result.total);
   //check excluded category
   //quote change until return 0 that means no match
-  let checkCategory = checkExcludedCategories(result.result[randomInt]);
+  let checkCategory = checkExcludedCategories(results.result[randomInt]);
   do {
     randomInt;
   } while (checkCategory !== 0);
   //return quote
-  return (res = result.result[randomInt].value);
+  return (res = results.result[randomInt].value);
 }
 
 function getRandomInt(max) {
