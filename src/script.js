@@ -4,7 +4,7 @@ const changeBackground = document.querySelector("#change-background");
 const randomButton = document.querySelector("#random-btn");
 const generateButton = document.querySelector("#generate-btn");
 const quotes = document.querySelector("#quotes-text");
-const categorySelect = document.getElementById("categories");
+const categorySelect = document.querySelector("#categories");
 let allCategories = [];
 
 refreshAvailableCategories();
@@ -28,6 +28,11 @@ changeBackground.addEventListener("click", () => {
 randomButton.addEventListener("click", (e) => {
   e.preventDefault();
   apiCall(urlRandom);
+});
+
+generateButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  displayJokeFilteredByCategories();
 });
 
 (function onLoad() {
@@ -63,7 +68,6 @@ async function fetchCategories() {
  * excluding "explicit", "political" and "religion".
  */
 function displayCategories() {
-  console.log(allCategories);
   for (let i = 0; i < allCategories.length; i++) {
     let category = allCategories[i];
     if (["explicit", "political", "religion"].includes(category)) {
@@ -89,6 +93,11 @@ function refreshAvailableCategories() {
   });
 }
 
+/**
+ * Fecth api for filter joke by categories
+ * @param {String} category category selected by user
+ * @returns {Promise<Map>}
+ */
 async function filterByCategories(category) {
   try {
     let res = await fetch(`https://api.chucknorris.io/jokes/random?category=${category}`);
@@ -96,6 +105,17 @@ async function filterByCategories(category) {
   } catch (err) {
     handleErrors(err);
   }
+}
+
+/**
+ * Display the joke filtered by categories to the screen
+ */
+function displayJokeFilteredByCategories() {
+  let index = categorySelect.selectedIndex;
+  let category = categorySelect.children[index].value;
+  filterByCategories(category).then((data) => {
+    showQuote(data);
+  });
 }
 
 function showQuote(result, url) {
