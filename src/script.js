@@ -24,9 +24,19 @@ changeBackground.addEventListener("click", () => {
     changeBackground.textContent = "sunny";
     document.body.style.backgroundImage =
       "url('images/night-desert-background.png')";
+    // Change background color btn in dark mode
+    randomButton.classList.add("dark-btn");
+    generateButton.classList.add("dark-btn");
+    filterSelect.classList.add("dark-select-btn");
+    categorySelect.classList.add("dark-select-btn");
   } else {
     changeBackground.textContent = "nightlight";
     document.body.style.backgroundImage = "url('images/desert-background.jpg')";
+    // Change background color btn to light mode
+    randomButton.classList.remove("dark-btn");
+    generateButton.classList.remove("dark-btn");
+    filterSelect.classList.remove("dark-select-btn");
+    categorySelect.classList.remove("dark-select-btn");
   }
 });
 
