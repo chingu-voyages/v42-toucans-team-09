@@ -2,16 +2,21 @@ const urlRandom = "https://api.chucknorris.io/jokes/random";
 const categoriesUrl = "https://api.chucknorris.io/jokes/categories";
 const changeBackground = document.querySelector("#change-background");
 const randomButton = document.querySelector("#random-btn");
-const generateButton = document.querySelector("#generate-btn");
+const form = document.querySelector("#form");
+const formInput = document.querySelector("#form-input");
 const quotes = document.querySelector("#quotes-text");
 const categorySelect = document.getElementById("categories");
 let allCategories = [];
-
-refreshAvailableCategories();
+let value;
 
 categorySelect.addEventListener("change", () => {
   refreshAvailableCategories();
+  formInput.value = "";
+  value = "";
 });
+
+/* - Background is changhing when it clickes on the icon
+- We use google icons so we need to rewrite text content inside element if we want to replace the icon */
 
 changeBackground.addEventListener("click", () => {
   changeBackground.classList.toggle("nightlight");
@@ -19,39 +24,58 @@ changeBackground.addEventListener("click", () => {
     changeBackground.textContent = "sunny";
     document.body.style.backgroundImage =
       "url('images/night-desert-background.png')";
-    // Change background color btn in dark mode
-    randomButton.classList.add('dark-btn');
-    generateButton.classList.add('dark-btn');
-    filterSelect.classList.add('dark-select-btn');
-    categorySelect.classList.add('dark-select-btn');
   } else {
     changeBackground.textContent = "nightlight";
     document.body.style.backgroundImage = "url('images/desert-background.jpg')";
-    // Change background color btn to light mode
-    randomButton.classList.remove('dark-btn');
-    generateButton.classList.remove('dark-btn');
-    filterSelect.classList.remove('dark-select-btn');
-    categorySelect.classList.remove('dark-select-btn');
   }
 });
 
+/*when the random buttom is clicking api call is creating */
 randomButton.addEventListener("click", (e) => {
   e.preventDefault();
+  formInput.value = "";
+  categorySelect.selectedIndex = 0;
   apiCall(urlRandom);
 });
 
-(function onLoad() {
-  apiCall(urlRandom);
-})();
+/* Saving the input text to value variable. */
 
+formInput.addEventListener("input", (e) => {
+  /* Input Value not text register sensitive and remove space in the beginning and in the end of each frase*/
+  value = e.target.value.trim().toLowerCase();
+  /*When input the category becomes "Any", because we search by category or by input text*/
+  if (value !== "") {
+    categorySelect.selectedIndex = 0;
+  }
+});
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  //value  of the category
+  const category = categorySelect.options[categorySelect.selectedIndex].value;
+  //if category any that meams
+  if (value === "") {
+    createApiCallByCategory(category);
+  } else {
+    createApiCallByInput(value);
+  }
+});
 
 // ======================= FUNCTIONS ======================== //
+function createApiCallByCategory(category) {
+  let url = `https://api.chucknorris.io/jokes/random?category=${category}`;
+  category === "any" ? apiCall(urlRandom) : apiCall(url);
+}
 
+function createApiCallByInput(value) {
+  let url = `https://api.chucknorris.io/jokes/search?query=${value}`;
+  apiCall(url);
+}
 /**
  * Show an error message in the console
  */
 function handleErrors(error) {
-  quotBox.innerHTML = `
+  quotes.innerHTML = `
   Oops! Something went wrong. Please reload the page and try again.`;
   console.error(error.message);
 }
@@ -73,7 +97,7 @@ async function fetchCategories() {
  * excluding "explicit", "political" and "religion".
  */
 function displayCategories() {
-  console.log(allCategories);
+  // console.log(allCategories);
   for (let i = 0; i < allCategories.length; i++) {
     let category = allCategories[i];
     if (["explicit", "political", "religion"].includes(category)) {
@@ -99,15 +123,65 @@ function refreshAvailableCategories() {
   });
 }
 
-function showQuote(result, url) {
-  console.log(url);
-  console.log(result.value);
-  quotes.textContent = result.value;
+/*Add quote to the page */
+
+function showQuote(result) {
+  quotes.textContent = result;
+}
+
+function checkData(result) {
+  if (result.total) {
+    showQuote(selectQuotFromObject(result));
+  } else {
+    checkSingleQuote(result);
+  }
+}
+
+function checkSingleQuote(result) {
+  //check excluded category
+  let checkQuote = checkExcludedCategories(result);
+  //if 0 that means no match if not call random Api one more time
+  if (checkQuote !== 0) {
+    apiCall(urlRandom);
+  } else {
+    showQuote(result.value);
+  }
+}
+
+function selectQuotFromObject(result) {
+  /**When we get the object with many facts from input search we choose the random fact from the
+    random integers */
+
+  //call function for random integers
+  const randomInt = getRandomInt(result.total);
+  //check excluded category
+  //quote change until return 0 that means no match
+  let checkCategory = checkExcludedCategories(result.result[randomInt]);
+  do {
+    randomInt;
+  } while (checkCategory !== 0);
+  //return quote
+  return (res = result.result[randomInt].value);
+}
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+//check the result on categories that excluded
+
+function checkExcludedCategories(data) {
+  const quoteCategory = data.categories;
+  const categoriesExcluded = ["explicit", "political", "religion"];
+  const result = categoriesExcluded.filter(
+    (category) => quoteCategory[0] === category
+  );
+  //return array length if 0 that means no match
+  return result.length;
 }
 
 function apiCall(url) {
   const getData = async (url) => {
-    console.log(url);
     const response = await fetch(url);
     const json = await response.json();
     return json;
@@ -115,8 +189,14 @@ function apiCall(url) {
 
   getData(url)
     .then((data) => {
-      showQuote(data, url);
+      checkData(data);
     })
     .catch((error) => handleErrors(error));
 }
 
+/*function generate random quote when the page is loading */
+
+(function onLoad() {
+  apiCall(urlRandom);
+  refreshAvailableCategories();
+})();
