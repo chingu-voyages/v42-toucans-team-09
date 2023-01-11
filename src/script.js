@@ -64,7 +64,7 @@ form.addEventListener("submit", (e) => {
 // ======================= FUNCTIONS ======================== //
 function createApiCallByCategory(category) {
   let url = `https://api.chucknorris.io/jokes/random?category=${category}`;
-  category === "any" ? apiCall(urlRandom) : apiCall(url);
+  category === "none" ? apiCall(urlRandom) : apiCall(url);
 }
 
 function createApiCallByInput(value) {

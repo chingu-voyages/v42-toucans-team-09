@@ -40,15 +40,19 @@
           <button class="btn random-btn" id="random-btn">RANDOM FACT</button>
         </div>
 
-        <div class="generate-section">
+        <form class="generate-section" id="form">
           <select name="categories" class="btn" id="categories">
-            <option value="None" selected>-- Please chose a category --</option>
+            <option value="none" selected>-- Please chose a category --</option>
           </select>
 
           <button class="btn generate-btn">GENERATE</button>
 
-          <input type="text" class="btn" placeholder="Or input some text..." />
-        </div>
+          <input
+            type="text"
+            class="btn"
+            id="form-input"
+            placeholder="Or input some text..." />
+        </form>
       </div>
     </main>
     <footer>
