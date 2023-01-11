@@ -5,14 +5,9 @@ const randomButton = document.querySelector("#random-btn");
 const generateButton = document.querySelector("#generate-btn");
 const quotes = document.querySelector("#quotes-text");
 const categorySelect = document.getElementById("categories");
-const filterSelect = document.getElementById("filter");
-const searchInput = document.getElementById("text-to-search");
 let allCategories = [];
 
-// Initialize the first maked element with the selected filter
-categorySelect.classList.add("masked");
-
-filterSelect.addEventListener("change", () => switchFilterOption());
+refreshAvailableCategories();
 
 categorySelect.addEventListener("change", () => {
   refreshAvailableCategories();
@@ -102,20 +97,6 @@ function refreshAvailableCategories() {
     // filter categories and display it to the screen
     displayCategories();
   });
-}
-
-/**
- * Switches filter to display searchInput or categorySelect
- */
-function switchFilterOption() {
-  if (filterSelect.selectedIndex === 0) {
-    searchInput.classList.remove("masked");
-    categorySelect.classList.add("masked");
-  } else {
-    searchInput.classList.add("masked");
-    categorySelect.classList.remove("masked");
-    refreshAvailableCategories()
-  }
 }
 
 function showQuote(result, url) {
