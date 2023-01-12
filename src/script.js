@@ -7,10 +7,12 @@ const formInput = document.querySelector("#form-input");
 const quotes = document.querySelector("#quotes-text");
 const categorySelect = document.getElementById("categories");
 let allCategories = [];
-let value;
+//It's a value of input text
+let value = "";
 
 categorySelect.addEventListener("change", () => {
   refreshAvailableCategories();
+  //It cleans input field and value variable
   formInput.value = "";
   value = "";
 });
@@ -21,7 +23,9 @@ categorySelect.addEventListener("change", () => {
 changeBackground.addEventListener("click", () => {
   changeBackground.classList.toggle("nightlight");
   if (changeBackground.classList.contains("nightlight")) {
+    //change icon
     changeBackground.textContent = "sunny";
+    //Change background image
     document.body.style.backgroundImage =
       "url('images/night-desert-background.png')";
     // Change background color btn in dark mode
@@ -43,7 +47,9 @@ changeBackground.addEventListener("click", () => {
 /*when the random buttom is clicking api call is creating */
 randomButton.addEventListener("click", (e) => {
   e.preventDefault();
+  //It cleans input field
   formInput.value = "";
+  //As we click random btn It's reset the chosen category
   categorySelect.selectedIndex = 0;
   apiCall(urlRandom);
 });
@@ -53,31 +59,38 @@ randomButton.addEventListener("click", (e) => {
 formInput.addEventListener("input", (e) => {
   /* Input Value not text register sensitive and remove space in the beginning and in the end of each frase*/
   value = e.target.value.trim().toLowerCase();
-  /*When input the category becomes "Any", because we search by category or by input text*/
+  /*When input field isn't empty, it's reset the chosen category to "Chose category"*/
   if (value !== "") {
     categorySelect.selectedIndex = 0;
   }
 });
 
+//Actions with form
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   //value  of the category
   const category = categorySelect.options[categorySelect.selectedIndex].value;
-  //if category any that meams
-  if (value === "") {
+  /*if category equals "Choose category" and input field is empty - call Random quiet. If Input field empty and category not previous one we call API by category otherwise by value*/
+  if (category === "none" && value === "") {
+    apiCall(urlRandom);
+  } else if (value === "" && category !== "none") {
     createApiCallByCategory(category);
-  } else {
+  } else if (value !== "") {
     createApiCallByInput(value);
+  } else {
+    apiCall(urlRandom);
   }
 });
 
 // ======================= FUNCTIONS ======================== //
 function createApiCallByCategory(category) {
+  console.log(category);
   let url = `https://api.chucknorris.io/jokes/random?category=${category}`;
-  category === "none" ? apiCall(urlRandom) : apiCall(url);
+  apiCall(url);
 }
 
 function createApiCallByInput(value) {
+  console.log(value);
   let url = `https://api.chucknorris.io/jokes/search?query=${value}`;
   apiCall(url);
 }
@@ -159,15 +172,14 @@ function checkSingleQuote(result) {
 }
 
 function selectQuotFromObject(result) {
+  const results = result;
   /**When we get the object with many facts from input search we choose the random fact from the
     random integers */
-  const results = result;
   //call function for random integers
-
-  const randomInt = getRandomInt(result.total);
+  const randomInt = getRandomInt(results.total);
   //check excluded category
-  //quote change until return 0 that means no match
   let checkCategory = checkExcludedCategories(results.result[randomInt]);
+  //quote change until return 0 that means no match
   do {
     randomInt;
   } while (checkCategory !== 0);
