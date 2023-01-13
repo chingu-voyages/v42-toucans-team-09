@@ -3,6 +3,7 @@ const categoriesUrl = "https://api.chucknorris.io/jokes/categories";
 const changeBackground = document.querySelector("#change-background");
 const randomButton = document.querySelector("#random-btn");
 const form = document.querySelector("#form");
+const generateButton = document.querySelector(".generate-btn");
 const formInput = document.querySelector("#form-input");
 const quotes = document.querySelector("#quotes-text");
 const categorySelect = document.getElementById("categories");
@@ -31,7 +32,7 @@ changeBackground.addEventListener("click", () => {
     // Change background color btn in dark mode
     randomButton.classList.add("dark-btn");
     generateButton.classList.add("dark-btn");
-    filterSelect.classList.add("dark-select-btn");
+    formInput.classList.add("dark-select-btn");
     categorySelect.classList.add("dark-select-btn");
   } else {
     changeBackground.textContent = "nightlight";
@@ -39,7 +40,7 @@ changeBackground.addEventListener("click", () => {
     // Change background color btn to light mode
     randomButton.classList.remove("dark-btn");
     generateButton.classList.remove("dark-btn");
-    filterSelect.classList.remove("dark-select-btn");
+    formInput.classList.remove("dark-select-btn");
     categorySelect.classList.remove("dark-select-btn");
   }
 });
