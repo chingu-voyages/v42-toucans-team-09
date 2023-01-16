@@ -54,6 +54,7 @@ formInput.addEventListener("input", typedTextTracking);
 form.addEventListener("submit", checkChoosenOptionInTheForm);
 
 function checkData(result) {
+  // TODO: check text if it have a dirty words before showing to the screen
   if (result.total > 0) {
     showQuote(selectQuotFromObject(result));
   } else if (result.id) {
