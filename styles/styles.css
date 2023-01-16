@@ -21,14 +21,6 @@ body {
   justify-content: space-between;
 }
 
-/* .background img {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: -1;
-} */
-
 .change-background {
   position: absolute;
   right: 20px;
@@ -50,6 +42,7 @@ header {
 }
 
 .header-icon {
+  display: block;
   height: 60px;
   margin: 0 16px;
 }
@@ -82,12 +75,12 @@ main {
   color: white;
   text-align: center;
   overflow-wrap: break-word;
-  word-break:break-all;
+  word-break: break-all;
 }
 
 .quotes-box p {
   overflow-wrap: break-word;
-  word-break:break-all;
+  word-break: break-all;
 }
 .random-btn-container {
   width: 100%;
@@ -98,6 +91,7 @@ main {
 .generate-section {
   display: flex;
   justify-content: space-around;
+  gap: 10px;
 }
 
 .generate-section > * {
@@ -115,7 +109,7 @@ select:hover {
 }
 
 .generate-btn,
-.random-btn{
+.random-btn {
   width: 137px;
 }
 
@@ -127,7 +121,6 @@ select:hover {
   color: rgb(250, 247, 215);
   transition: all 0.3s;
 }
-
 
 .dark-btn {
   background-color: rgb(193 69 104);
@@ -174,5 +167,13 @@ a {
   .generate-btn {
     margin: 10px 0;
   }
-}
 
+  .header-icon {
+    display: none;
+  }
+
+  .title {
+    font-size: 20px;
+    line-height: 50px;
+  }
+}
