@@ -154,6 +154,26 @@ a {
   color: rgb(250, 247, 215);
 }
 
+/* ======== ANIMATIONS ======== */
+
+.slide-text {
+  animation: animateQuote 0.5s;
+}
+
+@keyframes animateQuote {
+  0% {
+    transform: translateX(100px);
+    opacity: 0%;
+  }
+  50% {
+    transform: translateX(50px);
+    opacity: 50%;
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
 /* ======== MEDIA QUERIES ======== */
 
 @media only screen and (max-width: 580px) {
