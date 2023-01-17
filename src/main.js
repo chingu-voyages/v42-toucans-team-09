@@ -59,13 +59,19 @@ function checkData(result) {
   } else if (result.id) {
     checkSingleQuote(result);
   } else {
-    showQuote(`Oops....`);
+    showQuote(
+      `<span style="font-size:30px;">🤔</span>
+      <br/><br/>
+      It seems like Chuck Norris doesn't have this power yet.
+      </br></br>
+      <small>Let's try another word:)</small>`
+    );
   }
 }
 
 /*Add quote to the page */
 function showQuote(result) {
-  quotes.textContent = result;
+  quotes.innerHTML = result;
 }
 
 /*function generate random quote and refresh categories when the page is loading */
