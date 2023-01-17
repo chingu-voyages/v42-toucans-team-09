@@ -28,6 +28,19 @@ categorySelect.addEventListener("change", () => {
 
 changeBackground.addEventListener("click", changeBackgroundByClick);
 
+/* Animate quote text when a quote is generated */
+const animateSlider = document.querySelector(".slide-text");
+document.querySelectorAll(".animate").forEach((btn) => {
+  btn.addEventListener("click", function () {
+    animateSlider.classList.remove("slide-text");
+    setTimeout(animateQuote, 0.1);
+  });
+});
+
+function animateQuote() {
+  animateSlider.classList.add("slide-text");
+}
+
 /*when the random buttom is clicking api call is creating */
 randomButton.addEventListener("click", (e) => {
   e.preventDefault();
