@@ -63,7 +63,7 @@ function checkData(result) {
   if (result.total > 0) {
     let randomSearch = selectQuotFromObject(result);
     if (randomSearch) {
-      showQuote();
+      showQuote(randomSearch);
     } else {
       showQuote(nothingToShow);
     }
