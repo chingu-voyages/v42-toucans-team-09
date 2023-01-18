@@ -1,4 +1,5 @@
 import { fetchCategories } from "./api.js";
+import { canBeDisplayed, excludedCategories } from "./filterTextToShow.js";
 import { categorySelect } from "./main.js";
 
 let allCategories = [];
@@ -7,10 +8,9 @@ let allCategories = [];
  * excluding "explicit", "political" and "religion".
  */
 function displayCategories() {
-  // console.log(allCategories);
   for (let i = 0; i < allCategories.length; i++) {
     let category = allCategories[i];
-    if (["explicit", "political", "religion"].includes(category)) {
+    if (!canBeDisplayed(category, excludedCategories)) {
       continue;
     }
     let option = document.createElement("option");

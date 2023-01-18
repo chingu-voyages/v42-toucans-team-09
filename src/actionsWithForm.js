@@ -41,13 +41,11 @@ function checkChoosenOptionInTheForm(e) {
 }
 
 function createApiCallByCategory(category) {
-  console.log(category);
   let url = `https://api.chucknorris.io/jokes/random?category=${category}`;
   apiCall(url);
 }
 
 function createApiCallByInput(value) {
-  console.log(value);
   let url = `https://api.chucknorris.io/jokes/search?query=${value}`;
   apiCall(url);
 }
