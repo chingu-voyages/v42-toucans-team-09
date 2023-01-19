@@ -4,7 +4,7 @@ import {
   excludedWords,
   excludedCategories,
 } from "./filterTextToShow.js";
-import { showQuote } from "./main.js";
+import { showQuote, urlRandom } from "./main.js";
 
 function checkSingleQuote(result) {
   //check dirty words
