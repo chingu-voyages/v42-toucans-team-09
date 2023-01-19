@@ -54,18 +54,23 @@ formInput.addEventListener("input", typedTextTracking);
 form.addEventListener("submit", checkChoosenOptionInTheForm);
 
 function checkData(result) {
+  const nothingToShow = `<span style="font-size:30px;">🤔</span>
+  <br/><br/>
+  It seems like Chuck Norris doesn't have this power yet.
+  </br></br>
+  <small>Let's try another word:)</small>`;
+
   if (result.total > 0) {
-    showQuote(selectQuotFromObject(result));
+    let randomSearch = selectQuotFromObject(result);
+    if (randomSearch) {
+      showQuote(randomSearch);
+    } else {
+      showQuote(nothingToShow);
+    }
   } else if (result.id) {
     checkSingleQuote(result);
   } else {
-    showQuote(
-      `<span style="font-size:30px;">🤔</span>
-      <br/><br/>
-      It seems like Chuck Norris doesn't have this power yet.
-      </br></br>
-      <small>Let's try another word:)</small>`
-    );
+    showQuote(nothingToShow);
   }
 }
 

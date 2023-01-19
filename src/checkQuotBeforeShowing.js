@@ -1,48 +1,49 @@
 import { apiCall } from "./api.js";
+import {
+  canBeDisplayed,
+  excludedWords,
+  excludedCategories,
+} from "./filterTextToShow.js";
 import { showQuote } from "./main.js";
 
 function checkSingleQuote(result) {
-  //check excluded category
-  let checkQuote = checkExcludedCategories(result);
-  //if 0 that means no match if not call random Api one more time
-  if (checkQuote !== 0) {
-    apiCall(urlRandom);
-  } else {
+  //check dirty words
+  const haveNotDirtyWords = canBeDisplayed(result.value, excludedWords);
+  // if quote can be displayed show it
+  if (haveNotDirtyWords) {
     showQuote(result.value);
+  } else {
+    apiCall(urlRandom);
   }
 }
 
-function selectQuotFromObject(result) {
-  const results = result;
-  /**When we get the object with many facts from input search we choose the random fact from the
-    random integers */
+/**
+ * When we get the object with many facts from input search
+ * we choose the random fact from the random integers
+ */
+function selectQuotFromObject(data) {
+  const results = data;
+  let quotes = results.result;
+  let filterQuotes = Array("");
+
+  // Check all quote in quotes
+  for (let index = 0; index < quotes.length; index++) {
+    const quote = quotes[index];
+    // Removes quote if it can't be displayed (have dirty words)
+    if (canBeDisplayed(quote.value, excludedWords)) {
+      filterQuotes.push(quote.value);
+    }
+  }
+
   //call function for random integers
-  const randomInt = getRandomInt(results.total);
-  //check excluded category
-  let checkCategory = checkExcludedCategories(results.result[randomInt]);
-  //quote change until return 0 that means no match
-  do {
-    randomInt;
-  } while (checkCategory !== 0);
+  let randomInt = getRandomInt(filterQuotes.length);
+
   //return quote
-  return results.result[randomInt].value;
+  return filterQuotes[randomInt] || 0;
 }
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
-}
-
-//check the result on categories that excluded
-
-function checkExcludedCategories(data) {
-  const quoteCategory = data.categories;
-  if (
-    quoteCategory !== "explicit" &&
-    quoteCategory !== "political" &&
-    quoteCategory !== "religion"
-  ) {
-    return 0;
-  }
 }
 
 export { checkSingleQuote, selectQuotFromObject };
