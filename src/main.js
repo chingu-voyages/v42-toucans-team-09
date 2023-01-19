@@ -21,6 +21,10 @@ const generateButton = document.querySelector(".generate-btn");
 const formInput = document.querySelector("#form-input");
 const quotes = document.querySelector("#quotes-text");
 const categorySelect = document.getElementById("categories");
+const generatedFactsNumber = document.getElementById("generated-facts-number");
+
+//Minus 1 so that the quote is not considered when loading the page
+let generatedFactsCounter = -1;
 
 categorySelect.addEventListener("change", () => {
   clearInputField();
@@ -63,11 +67,13 @@ function checkData(result) {
   if (result.total > 0) {
     let randomSearch = selectQuotFromObject(result);
     if (randomSearch) {
+      generatedFactsCounter += 1;
       showQuote(randomSearch);
     } else {
       showQuote(nothingToShow);
     }
   } else if (result.id) {
+    generatedFactsCounter += 1;
     checkSingleQuote(result);
   } else {
     showQuote(nothingToShow);
@@ -77,6 +83,7 @@ function checkData(result) {
 /*Add quote to the page */
 function showQuote(result) {
   quotes.innerHTML = result;
+  generatedFactsNumber.textContent = generatedFactsCounter;
 }
 
 /*function generate random quote and refresh categories when the page is loading */
