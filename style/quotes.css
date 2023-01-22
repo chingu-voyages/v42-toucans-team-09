@@ -1,0 +1,14 @@
+@import url('./style.css');
+
+header {
+    width: 100vw;
+    padding: 1.45rem 0;
+    position: relative;
+    text-align: center;
+}
+
+header > img {
+    position: absolute;
+    right: 5%;
+    top: 25%;
+}

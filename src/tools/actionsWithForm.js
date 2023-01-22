@@ -1,5 +1,5 @@
-import { categorySelect, formInput, urlRandom } from "./main.js";
-import { apiCall } from "./api.js";
+import { categorySelect, formInput, urlRandom } from "../main.js";
+import { apiCall } from "../api/api.js";
 
 //It's a value of input text
 let valueInputField = "";

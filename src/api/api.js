@@ -1,4 +1,4 @@
-import { quotes, categoriesUrl, checkData } from "./main.js";
+import { quotes, categoriesUrl, checkData } from "../main.js";
 
 function apiCall(url) {
   const getData = async (url) => {

@@ -1,4 +1,4 @@
-import { apiCall, fetchCategories } from "./api.js";
+import { apiCall, fetchCategories } from "./api/api.js";
 import { changeBackgroundByClick } from "./changeBackground.js";
 import { refreshAvailableCategories } from "./refreshCategories.js";
 import {
@@ -6,7 +6,7 @@ import {
   categoryReset,
   typedTextTracking,
   checkChoosenOptionInTheForm,
-} from "./actionsWithForm.js";
+} from "./tools/actionsWithForm.js";
 import {
   checkSingleQuote,
   selectQuotFromObject,
