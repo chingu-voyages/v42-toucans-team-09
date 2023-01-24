@@ -11,6 +11,7 @@ import {
   checkSingleQuote,
   selectQuotFromObject,
 } from "./checkQuotBeforeShowing.js";
+import { ArrayStorage } from "./arrayStorage.js";
 
 const urlRandom = "https://api.chucknorris.io/jokes/random";
 const categoriesUrl = "https://api.chucknorris.io/jokes/categories";
@@ -22,6 +23,9 @@ const formInput = document.querySelector("#form-input");
 const quotes = document.querySelector("#quotes-text");
 const categorySelect = document.getElementById("categories");
 const generatedFactsNumber = document.getElementById("generated-facts-number");
+
+// instance of the ArrayStorage object 
+const storage = new ArrayStorage('quotes-history');
 
 //Minus 1 so that the quote is not considered when loading the page
 let generatedFactsCounter = -1;
