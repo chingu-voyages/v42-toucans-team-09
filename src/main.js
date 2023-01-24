@@ -24,8 +24,8 @@ const quotes = document.querySelector("#quotes-text");
 const categorySelect = document.getElementById("categories");
 const generatedFactsNumber = document.getElementById("generated-facts-number");
 
-// instance of the ArrayStorage object 
-const storage = new ArrayStorage('quotes-history');
+// instance of the ArrayStorage object
+const storage = new ArrayStorage("quotes-history");
 
 //Minus 1 so that the quote is not considered when loading the page
 let generatedFactsCounter = -1;
@@ -69,16 +69,22 @@ function checkData(result) {
   <small>Let's try another word:)</small>`;
 
   if (result.total > 0) {
-    let randomSearch = selectQuotFromObject(result);
+    const randomSearch = selectQuotFromObject(result);
     if (randomSearch) {
-      generatedFactsCounter += 1;
       showQuote(randomSearch);
+      generatedFactsCounter += 1;
     } else {
       showQuote(nothingToShow);
     }
   } else if (result.id) {
-    generatedFactsCounter += 1;
-    checkSingleQuote(result);
+    const canBeDisplayed = checkSingleQuote(result);
+    // if quote can be displayed show it
+    if (canBeDisplayed) {
+      showQuote(result.value);
+      generatedFactsCounter += 1;
+    } else {
+      apiCall(urlRandom);
+    }
   } else {
     showQuote(nothingToShow);
   }
