@@ -584,6 +584,14 @@ video {
   margin-bottom: 3rem;
 }
 
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
+.mb-1\.5 {
+  margin-bottom: 0.375rem;
+}
+
 .inline-block {
   display: inline-block;
 }
@@ -674,6 +682,10 @@ video {
 
 .gap-y-7 {
   row-gap: 1.75rem;
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
 }
 
 .whitespace-nowrap {
