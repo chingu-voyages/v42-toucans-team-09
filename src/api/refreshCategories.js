@@ -1,6 +1,6 @@
 import { fetchCategories } from "./api.js";
-import { canBeDisplayed, excludedCategories } from "./filterTextToShow.js";
-import { categorySelect } from "./main.js";
+import { canBeDisplayed, excludedCategories } from "../tools/filterTextToShow.js";
+import { categorySelect } from "../main.js";
 
 let allCategories = [];
 /**

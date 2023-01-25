@@ -1,36 +1,24 @@
-import {
-  randomButton,
-  generateButton,
-  formInput,
-  categorySelect,
-  changeBackground,
-} from "./main.js";
+// import {
+//   changeBackground
+// } from "../main.js"
 
 /* - Background is changhing when it clickes on the icon
 - We use google icons so we need to rewrite text content inside element if we want to replace the icon */
+const changeBackground = document.querySelector("#change-background");
+
+changeBackground.addEventListener("click", changeBackgroundByClick);
 
 function changeBackgroundByClick() {
-  changeBackground.classList.toggle("nightlight");
-  if (changeBackground.classList.contains("nightlight")) {
-    //change icon
-    changeBackground.textContent = "sunny";
-    //Change background image
-    document.body.style.backgroundImage =
-      "url('images/night-desert-background.png')";
-    // Change background color btn in dark mode
-    randomButton.classList.add("dark-btn");
-    generateButton.classList.add("dark-btn");
-    formInput.classList.add("dark-select-btn");
-    categorySelect.classList.add("dark-select-btn");
-  } else {
-    changeBackground.textContent = "nightlight";
-    document.body.style.backgroundImage = "url('images/desert-background.jpg')";
-    // Change background color btn to light mode
-    randomButton.classList.remove("dark-btn");
-    generateButton.classList.remove("dark-btn");
-    formInput.classList.remove("dark-select-btn");
-    categorySelect.classList.remove("dark-select-btn");
+  const html=document.documentElement;
+  html.classList.toggle("dark");
+  if (html.classList.contains("dark")){
+    changeBackground.src="img/dark-bg.png"
+    changeBackground.alt="Switch to light background color"
+  }
+  else {
+    changeBackground.src="img/light-bg.png"
+    changeBackground.alt="Switch to dark background color"
   }
 }
 
-export { changeBackgroundByClick };
+// export { changeBackgroundByClick };

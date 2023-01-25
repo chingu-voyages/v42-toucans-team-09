@@ -5,41 +5,128 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="style/style.css" rel="stylesheet">
-  <title>Document</title>
+  <title>Serious.ly</title>
+  <link rel="icon" type="image/x-icon" href="/img/light-bg.png">
 </head>
 <body class="font-sanse bg-white dark:bg-black">
 
-    <header class="container mx-auto px-2.5 xl:px-4 flex items-center py-4 justify-between flex-row sm:py-7  capitalize">
+    <header class="container mx-auto px-2.5 xl:px-4 flex items-center py-4 justify-between flex-row sm:py-7 capitalize">
       <a class="text-2xl md:text-4xl dark:text-white" href="#">Serious.ly</a>
       <div class="flex justify-between items-center">
         <nav class="sm:mr-9">
           <a class="mr-8 text-xl border-b-transparent	md:hover:text-yellow-400 dark:text-white transition-all" href="#" >Team</a>
-          <a class="hidden sm:inline-block bg-yellow-300 md:hover:bg-yellow-400 px-3 py-2 rounded-md shadow-btn px-text-lg font-bold whitespace-nowrap transition-all" href="#">Generate now</a>
+          <a class="hidden sm:inline-block bg-yellow-300 md:hover:bg-yellow-400 px-3 py-3 rounded-md shadow-btn px-text-lg font-bold whitespace-nowrap transition-all" href="quotes.html">Generate now</a>
         </nav>
-        <a href="#"> <img class="w-6" src="img/light-bg.png" alt="Switch to dark background color"></a>        
+        <a href="#"> <img id="change-background" class="w-7" src="img/light-bg.png" alt="Switch to dark background color"></a>        
       </div>         
     </header>  
-
+<main>
     <section class="container mx-auto pt-10 pb-16 md:pt-20 md:pb-28 text-center">
       <p class="mb-5 md:mb-8 text-5xl md:text-9xl font-bold dark:text-white">Don’t Worry <br> Be Happy</p>
-      <h1 class="mb-5 md:mb-8 md:text-3xl dark:text-white">Serious.ly is a    <span class="font-bold">humorous</span> quote generator
+      <h1 class="mb-5 md:mb-8 md:text-3xl dark:text-white">Serious.ly is a <span class="font-bold">humorous</span> quote generator
        <br> to make your day <span class="underline">better</span></h1>
       <h2 class="mb-6 md:mb-8 text-base dark:text-white">💪 Powered by Chuck Norris API</h2>
-      <a class="bg-yellow-300 md:hover:bg-yellow-400 px-3 py-2 rounded-md shadow-btn px-text-lg font-bold	 whitespace-nowrap transition-all" href="#">Generate now</a>
+      <a class="inline-block bg-yellow-300 md:hover:bg-yellow-400 px-3 py-3 rounded-md shadow-btn px-text-lg font-bold	 whitespace-nowrap transition-all" href="quotes.html">Generate now</a>
     </section>
 
     <section class="bg-neutral-100">
       <div class="container mx-auto pt-10 md:pt-16 pb-10 text-center">
         <p class="mb-2 text-sm md:text-xl font-bold">As Seen on</p>
-        <a class="inline-block" href="#"><img class="w-40 md:w-auto" src="img/chingu-logo.png" alt="Chingu logo"></a>
+        <a class="inline-block" href="https://www.chingu.io/"><img class="w-40 md:w-auto" src="img/chingu-logo.png" alt="Chingu logo"></a>
       </div>
     </section>
 
-    <section class="container mx-auto pb-12 text-center md:text-2xl">
-      <img src="img/app.png" alt="">
+    <section class="container mx-auto pb-14 text-center md:text-2xl">
+      <img class="max-w-full" src="img/app.png" alt="">
       <p class="font-bold dark:text-white">Responsive on any device</p>
       <p class="dark:text-white">Access from anywhere</p>
     </section>
  
+    <section class="container mx-auto pt-28 pb-28 md:pt-60 md:pb-56 text-center dark:text-white">
+
+      <div class="px-2">
+        <h2 class="mb-7 text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold">Taking Life Too Serious? <br> Try Serious.ly</h2>
+      <h3 class="mb-7 text-base sm:text-xl md:text-2xl lg:text-3xl"><span class="font-bold">Share</span> the <span class="underline">humor</span> with your “too serious friend” <br> It’s time for a chill!</h3>
+      <p class="mb-7 text-xs md:text-sm lg:text-base">p.s. we also have a dark mode to chill your “too serious eyes” 😎</p>
+      </div>
+      
+      <ul class="flex items-center flex-col gap-y-7 mb-14">
+        <li class="flex flex-col justify-center items-center w-11/12 h-181 sm:w-407 border border-black dark:border-white rounded-md shadow-btn ">
+          <p class="text-2xl font-bold">🔎 Search by Words</p>
+          <p class="text-base">Find your suitable quotes</p>
+        </li>    
+        <li class="flex flex-col justify-center items-center w-11/12 h-181 sm:w-407 border border-black dark:border-white rounded-md shadow-btn ">
+          <p class="text-2xl font-bold">🗻 Explore Different Category</p>
+          <p class="text-base">Adjust the quotes to your needs</p>
+        </li>
+        <li class="flex flex-col justify-center items-center w-11/12 h-181 sm:w-407 border border-black dark:border-white rounded-md shadow-btn ">
+          <p class="text-2xl font-bold">🍼 Child Friendly Feature</p>
+          <p class="text-base">No dirty or adult jokes to keep children safe</p>
+        </li>
+      </ul>
+
+      <a class="bg-yellow-300 md:hover:bg-yellow-400 px-3 py-3 rounded-md shadow-btn px-text-lg font-bold dark:text-black whitespace-nowrap transition-all" href="quotes.html">Generate now</a>
+      
+    </section>
+
+    <section class="container mx-auto px-2 pb-16 md:pb-24 text-center dark:text-white">
+      <h2 class="mb-8 text-4xl md:text-6xl font-bold">Meet Our Team</h2>
+      <p class="mb-12 text-xl sm:text-2xl md:text-3xl">We’re working cross-borderly from 5 countries <br class="hidden md:inline"> using English as a secondary language</p>
+
+      <ul class="flex flex-col justify-around items-center gap-10 md:flex-row md:flex-wrap md:gap-20 md:justify-center">
+
+        <li class="flex flex-col items-center justify-between gap-2">
+          <div class="flex justify-center items-center w-48 h-48 rounded-full bg-black text-white text-xl dark:bg-white dark:text-black">
+            Yana</div>
+          <p class="text-xl">Front-End Engineer</p>
+          <img src="img/flags/ukraine.png" alt="Flag of Ukraine">
+      </li>
+
+      <li class="flex flex-col items-center justify-between gap-1.5">
+        <div class="flex justify-center items-center w-48 h-48 rounded-full bg-black text-white text-xl dark:bg-white dark:text-black">
+          Andrei</div>
+        <p class="text-xl">Front-End Engineer</p>
+        <img src="img/flags/romania.png" alt="Flag of Romania">
+    </li>
+
+    <li class="flex flex-col items-center justify-between gap-1.5">
+      <div class="flex justify-center items-center w-48 h-48 rounded-full bg-black text-white text-xl dark:bg-white dark:text-black">
+        Taufiq</div>
+      <p class="text-xl">Product Owner</p>
+      <img src="img/flags/indonesia.png" alt="Flag of Indonesia">
+    </li>
+
+    <li class="flex flex-col items-center justify-between gap-1.5">
+          <div class="flex justify-center items-center w-48 h-48 rounded-full bg-black text-white text-xl dark:bg-white dark:text-black">
+            Toki</div>
+          <p class="text-xl">Front-End Engineer</p>
+          <img src="img/flags/madagascar.png" alt="Flag of Madagascar">
+    </li>
+
+    <li class="flex flex-col items-center justify-between gap-1.5">
+        <div class="flex justify-center items-center w-48 h-48 rounded-full bg-black text-white text-xl dark:bg-white dark:text-black">
+          Noman</div>
+        <p class="text-xl">Front-End Engineer</p>
+        <img src="img/flags/pakistan.png" alt="Flag of Pakistan">
+    </li>
+  </ul>
+</section>
+
+<section class="bg-white">
+  <div class="container mx-auto px-2 py-5 md:py-8 text-center">
+    <h2 class="mb-7 text-2xl sm:text-3xl md:text-4xl font-bold">Tech Stack</h2>
+    <img class="inline-block w-full sm:w-3/4 md:w-679" src="img/programes.png" alt="We used these tech skills: HTML, CSS, Javascript, Figma,  Jira, and GitHub.">
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-white">
+  <div class="container mx-auto px-2 py-4 text-center">
+    <p class="text-xs sm:text-base md:text-xl lg:text-2xl text-gray-500	">Created by Toucans 9 (Voyagee 42) | GitHub Repo 👉 <a href="https://github.com/chingu-voyages/v42-toucans-team-09/tree/main">Link</a></p> 
+  </div>
+</footer>
+
+<script src="src/tools/changeBackground.js"></script>
 </body>
 </html>

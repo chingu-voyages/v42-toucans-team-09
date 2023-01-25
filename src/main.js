@@ -1,6 +1,6 @@
 import { apiCall, fetchCategories } from "./api/api.js";
-import { changeBackgroundByClick } from "./changeBackground.js";
-import { refreshAvailableCategories } from "./refreshCategories.js";
+import { changeBackgroundByClick } from "./tools/changeBackground.js";
+import { refreshAvailableCategories } from "./api/refreshCategories.js";
 import {
   clearInputField,
   categoryReset,
@@ -10,7 +10,7 @@ import {
 import {
   checkSingleQuote,
   selectQuotFromObject,
-} from "./checkQuotBeforeShowing.js";
+} from "./tools/checkQuotBeforeShowing.js";
 
 const urlRandom = "https://api.chucknorris.io/jokes/random";
 const categoriesUrl = "https://api.chucknorris.io/jokes/categories";
