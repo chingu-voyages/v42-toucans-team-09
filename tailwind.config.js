@@ -7,9 +7,9 @@ module.exports = {
 ],
 
   theme: {
-    container: {
-      center: true,
-    },
+    // container: {
+    //   center: true,
+    // },
     screens: {
       sm: '580px',
       md: '768px',
@@ -24,6 +24,13 @@ module.exports = {
     extend: {
       boxShadow: {
         'btn': '0px 1.4433px 10.8247px 0.72165px rgba(0, 0, 0, 0.25)',
+      },
+      width: {
+        '407': '25rem',
+        '679':'42.4rem',
+      },
+      height:{
+        '181': '11.3rem'
       }
     },
   },

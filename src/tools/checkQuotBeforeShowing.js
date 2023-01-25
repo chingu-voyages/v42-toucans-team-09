@@ -1,10 +1,10 @@
-import { apiCall } from "./api.js";
+import { apiCall } from "../api/api.js";
 import {
   canBeDisplayed,
   excludedWords,
   excludedCategories,
 } from "./filterTextToShow.js";
-import { showQuote, urlRandom } from "./main.js";
+import { showQuote, urlRandom } from "../main.js";
 
 function checkSingleQuote(result) {
   //check dirty words
