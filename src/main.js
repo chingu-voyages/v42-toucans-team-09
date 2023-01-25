@@ -1,16 +1,16 @@
-import { apiCall, fetchCategories } from "./api.js";
-import { changeBackgroundByClick } from "./changeBackground.js";
-import { refreshAvailableCategories } from "./refreshCategories.js";
+import { apiCall, fetchCategories } from "./api/api.js";
+import { changeBackgroundByClick } from "./tools/changeBackground.js";
+import { refreshAvailableCategories } from "./api/refreshCategories.js";
 import {
   clearInputField,
   categoryReset,
   typedTextTracking,
   checkChoosenOptionInTheForm,
-} from "./actionsWithForm.js";
+} from "./tools/actionsWithForm.js";
 import {
   checkSingleQuote,
   selectQuotFromObject,
-} from "./checkQuotBeforeShowing.js";
+} from "./tools/checkQuotBeforeShowing.js";
 import { ArrayStorage } from "./arrayStorage.js";
 
 const urlRandom = "https://api.chucknorris.io/jokes/random";
