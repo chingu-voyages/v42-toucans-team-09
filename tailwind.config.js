@@ -1,14 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: "class",
-  // modified content path to "./*.html" so all files
-  // ending in .html will be considered
-  content: ["./src/**/*.js", "./*.html"],
+  darkMode: 'class',
+  content: [
+    "./src/**/*.js",
+    './index.html',
+    './quotes.html'
+],
 
   theme: {
-    // container: {
-    //   center: true,
-    // },
     screens: {
       sm: "580px",
       md: "768px",

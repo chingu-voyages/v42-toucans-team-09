@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="style/style.css" rel="stylesheet">
   <title>Serious.ly</title>
-  <link rel="icon" type="image/x-icon" href="/img/light-bg.png">
+  <link rel="icon" type="image/x-icon" href="img/light-bg.png">
 </head>
+
 <body class="font-sanse bg-white dark:bg-black">
 
     <header class="container mx-auto px-2.5 xl:px-4 flex items-center py-4 justify-between flex-row sm:py-7 capitalize">
@@ -17,7 +18,9 @@
           <a class="mr-8 text-xl border-b-transparent	md:hover:text-yellow-400 dark:text-white transition-all" href="#team" >Team</a>
           <a class="hidden sm:inline-block bg-yellow-300 md:hover:bg-yellow-400 px-3 py-3 rounded-md shadow-btn px-text-lg font-bold whitespace-nowrap transition-all" href="quotes.html">Generate now</a>
         </nav>
-        <a href="#"> <img id="change-background" class="w-7" src="img/light-bg.png" alt="Switch to dark background color"></a>        
+        <a href="#">
+           <img id="change-background" class="w-7" src="img/light-bg.png" alt="Switch to dark background color">
+          </a>        
       </div>         
     </header>  
 <main>
@@ -32,12 +35,21 @@
     <section class="bg-neutral-100">
       <div class="container mx-auto pt-10 md:pt-16 pb-10 text-center">
         <p class="mb-2 text-sm md:text-xl font-bold">As Seen on</p>
-        <a class="inline-block" href="https://www.chingu.io/"><img class="w-40 md:w-auto" src="img/chingu-logo.png" alt="Chingu logo"></a>
+        <a class="inline-block" href="https://www.chingu.io/">
+          <picture>
+            <source type="image/webp" srcset="img/webp/chingu-logo.webp">
+            <img class="w-40 md:w-72" src="img/chingu-logo.png" alt="Chingu logo">
+          </picture>
+        </a>
       </div>
     </section>
 
     <section class="container mx-auto pb-14 text-center md:text-2xl">
-      <img class="max-w-full" src="img/app.png" alt="Quotes generator page">
+      <picture>
+        <source type="image/webp" srcset="img/webp/app.webp">
+        <img class="max-w-full" src="img/app.png" alt="Quotes generator page">
+      </picture>
+      
       <p class="font-bold dark:text-white">Responsive on any device</p>
       <p class="dark:text-white">Access from anywhere</p>
     </section>
@@ -79,35 +91,35 @@
           <div class="flex justify-center items-center mb-2 w-48 h-48 rounded-full bg-black text-white text-xl dark:bg-white dark:text-black">
             Yana</div>
           <p class="text-xl">Front-End Engineer</p>
-          <img src="img/flags/ukraine.png" alt="Flag of Ukraine">
+          <img class="w-9 h-9" src="img/flags/ukraine.png" alt="Flag of Ukraine">
       </li>
 
       <li class="flex flex-col items-center justify-between gap-1.5">
         <div class="flex justify-center items-center mb-2 w-48 h-48 rounded-full bg-black text-white text-xl dark:bg-white dark:text-black">
           Andrei</div>
         <p class="text-xl">Front-End Engineer</p>
-        <img src="img/flags/romania.png" alt="Flag of Romania">
+        <img class="w-9 h-9" src="img/flags/romania.png" alt="Flag of Romania">
     </li>
 
     <li class="flex flex-col items-center justify-between gap-1.5">
       <div class="flex justify-center items-center mb-2 w-48 h-48 rounded-full bg-black text-white text-xl dark:bg-white dark:text-black">
         Taufiq</div>
       <p class="text-xl">Product Owner</p>
-      <img src="img/flags/indonesia.png" alt="Flag of Indonesia">
+      <img class="w-9 h-9" src="img/flags/indonesia.png" alt="Flag of Indonesia">
     </li>
 
     <li class="flex flex-col items-center justify-between gap-1.5">
           <div class="flex justify-center items-center mb-2 w-48 h-48 rounded-full bg-black text-white text-xl dark:bg-white dark:text-black">
             Toki</div>
           <p class="text-xl">Front-End Engineer</p>
-          <img src="img/flags/madagascar.png" alt="Flag of Madagascar">
+          <img class="w-9 h-9" src="img/flags/madagascar.png" alt="Flag of Madagascar">
     </li>
 
     <li class="flex flex-col items-center justify-between gap-1.5">
         <div class="flex justify-center items-center mb-2 w-48 h-48 rounded-full bg-black text-white text-xl dark:bg-white dark:text-black">
           Noman</div>
         <p class="text-xl">Front-End Engineer</p>
-        <img src="img/flags/pakistan.png" alt="Flag of Pakistan">
+        <img class="w-9 h-9" src="img/flags/pakistan.png" alt="Flag of Pakistan">
     </li>
   </ul>
 </section>
@@ -115,7 +127,10 @@
 <section class="bg-white">
   <div class="container mx-auto px-2 py-5 md:py-8 text-center">
     <h2 class="mb-7 text-2xl sm:text-3xl md:text-4xl font-bold">Tech Stack</h2>
-    <img class="inline-block w-full sm:w-3/4 md:w-679" src="img/programes.png" alt="We used these tech skills: HTML, CSS, Javascript, Figma,  Jira, and GitHub.">
+    <picture>
+      <source type="image/webp" srcset="img/webp/programes.webp">
+      <img class="inline-block w-full sm:w-3/4 md:w-679" src="img/programes.png" alt="We used these tech skills: HTML, CSS, Javascript, Figma,  Jira, and GitHub.">
+    </picture>
   </div>
 </section>
 
