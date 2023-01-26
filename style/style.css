@@ -604,6 +604,10 @@ video {
   height: 12rem;
 }
 
+.h-9 {
+  height: 2.25rem;
+}
+
 .w-7 {
   width: 1.75rem;
 }
@@ -618,6 +622,10 @@ video {
 
 .w-48 {
   width: 12rem;
+}
+
+.w-9 {
+  width: 2.25rem;
 }
 
 .w-full {
@@ -934,8 +942,8 @@ video {
     display: inline;
   }
 
-  .md\:w-auto {
-    width: auto;
+  .md\:w-72 {
+    width: 18rem;
   }
 
   .md\:w-679 {
@@ -975,20 +983,12 @@ video {
     padding-top: 4rem;
   }
 
-  .md\:pt-60 {
-    padding-top: 15rem;
+  .md\:pt-56 {
+    padding-top: 14rem;
   }
 
   .md\:pb-56 {
     padding-bottom: 14rem;
-  }
-
-  .md\:pb-24 {
-    padding-bottom: 6rem;
-  }
-
-  .md\:pt-56 {
-    padding-top: 14rem;
   }
 
   .md\:text-4xl {

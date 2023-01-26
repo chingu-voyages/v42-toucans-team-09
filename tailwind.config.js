@@ -4,12 +4,10 @@ module.exports = {
   content: [
     "./src/**/*.js",
     './index.html',
+    './quotes.html'
 ],
 
   theme: {
-    // container: {
-    //   center: true,
-    // },
     screens: {
       sm: '580px',
       md: '768px',
