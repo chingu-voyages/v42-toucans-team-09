@@ -46,8 +46,10 @@
 
     <section class="container mx-auto pb-14 text-center md:text-2xl">
       <picture>
-        <source type="image/webp" srcset="img/webp/app.webp">
-        <img class="max-w-full" src="img/app.png" alt="Quotes generator page">
+        <source media="(max-width: 1299px)" type="image/webp" srcset="img/app/app-1x.webp">
+        <source media="(min-width: 1300px)" type="image/webp" srcset="img/app/app-2x.webp">
+        <source media="(min-width: 1300px)" srcset="img/app/app-2x.png">
+        <img class="max-w-full" src="img/app/app-1x.png" alt="Quotes generator page">
       </picture>
       
       <p class="font-bold dark:text-white">Responsive on any device</p>
