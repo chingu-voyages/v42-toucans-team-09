@@ -654,12 +654,12 @@ video {
   height: 12rem;
 }
 
-.h-96 {
-  height: 24rem;
-}
-
 .h-9 {
   height: 2.25rem;
+}
+
+.h-96 {
+  height: 24rem;
 }
 
 .w-7 {
@@ -1218,8 +1218,6 @@ video {
     padding-top: 4rem;
   }
 
-  .md\:pt-56 {
-    padding-top: 14rem;
   .md\:pt-56 {
     padding-top: 14rem;
   }
