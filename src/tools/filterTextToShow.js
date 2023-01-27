@@ -47,6 +47,12 @@ const excludedWords = [
   "Cunt",
   "Fuck",
   "Motherfucker",
+  "Muhammad",
+  "Mohammed",
+  "Prophet",
+  "Islam",
+  "Solomon",
+  "Christian",
 ];
 
 const excludedCategories = ["explicit", "political", "religion"];
