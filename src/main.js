@@ -23,6 +23,7 @@ const formInput = document.querySelector("#form-input");
 const quotes = document.querySelector("#quotes-text");
 const categorySelect = document.getElementById("categories");
 const generatedFactsNumber = document.getElementById("generated-facts-number");
+const quotesHystory = document.getElementById("quotes-hystory");
 
 // instance of the ArrayStorage object
 const storage = new ArrayStorage("quotes-history");
@@ -72,6 +73,7 @@ function checkData(result) {
     const randomSearch = selectQuotFromObject(result);
     if (randomSearch) {
       showQuote(randomSearch);
+      storage.append(randomSearch);
       generatedFactsCounter += 1;
     } else {
       showQuote(nothingToShow);
@@ -81,6 +83,7 @@ function checkData(result) {
     // if quote can be displayed show it
     if (canBeDisplayed) {
       showQuote(result.value);
+      storage.append(result.value);
       generatedFactsCounter += 1;
     } else {
       apiCall(urlRandom);
@@ -92,8 +95,14 @@ function checkData(result) {
 
 /*Add quote to the page */
 function showQuote(result) {
+  console.log(storage.list);
   quotes.innerHTML = result;
   generatedFactsNumber.textContent = generatedFactsCounter;
+  for (let i = 0; i < storage.list.length; i++) {
+    const quote = storage.list[i];
+    const quoteHystoryElement = `<p class="m-6">${quote}</p>`
+    quotesHystory.appendChild(quoteHystoryElement);
+  }
 }
 
 /*function generate random quote and refresh categories when the page is loading */
