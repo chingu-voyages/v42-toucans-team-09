@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -30,24 +30,21 @@
         class="w-full text-center flex bg-white dark:bg-black m-4 rounded-2xl"
       >
         <p
+          id="quotes-text"
           class="px-6 md:px-10 lg:max-w-4xl sm:text-lg md:text-xl lg:text-2xl mx-auto self-center dark:text-white"
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos eveniet
-          explicabo soluta. Nisi, quam praesentium. Ducimus ullam, delectus
-          excepturi ab nostrum earum sed magnam distinctio porro minus nulla
-          nesciunt, eaque consectetur incidunt molestiae magni natus rerum error
-          ex? Molestias reiciendis, nulla et aliquid amet ratione optio
-          doloremque accusamus provident dolore.
+          
         </p>
       </div>
     </div>
 
     <p class="text-center py-6 text-sm dark:text-white">
-      🤓 You have chilled with - quotes
+      🤓 You have chilled with <span id="generated-facts-number">0</span> quotes
     </p>
 
     <div class="flex justify-center">
       <button
+        id="random-btn"
         class="bg-black text-white p-4 rounded-xl dark:bg-white dark:text-black shadow-btn relative"
       >
         <span class="absolute left-5 top-3 lg:top-3.5">👉</span>
@@ -55,25 +52,29 @@
       </button>
     </div>
 
-    <div
+    <form
+      id="form"
       class="flex flex-col py-8 md:grid md:grid-cols-6 md:gap-x-4 md:px-8 lg:px-12 max-w-6xl mx-auto"
     >
       <input
+        id="form-input"
         class="p-2 w-64 mx-auto border-2 border-stone-400 md:col-span-3 md:w-full md:my-4 placeholder:text-center rounded-lg"
         placeholder="🔎 Search Quotes"
       />
       <button
         class="my-4 p-2 w-56 mx-auto border-2 dark:border-white dark:text-white border-stone-600 md:col-span-1 md:w-full rounded-lg"
       >
-        <p class="text-lg font-semibold">Generate</p>
+        <p class="generate-btn text-lg font-semibold">Generate</p>
         <p class="text-xs">Search/Category</p>
       </button>
       <select
+        id="categories"
         class="p-2 w-72 mx-auto border-2 border-stone-400 md:col-span-2 md:w-full md:my-4 rounded-lg bg-gray-100 appearance-none"
       >
         <option class="text-center">🔻 Choose Category</option>
       </select>
-    </div>
+    </form
+      id="form">
 
     <!-- QUOTES HISTORY SECTION -->
     <div class="">
@@ -86,6 +87,7 @@
       >
       </div>
     </div>
-    <script src="src/tools/changeBackground.js"></script>
+
+    <script src="src/main.js" type="module"></script>
   </body>
 </html>
