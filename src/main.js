@@ -11,7 +11,7 @@ import {
   checkSingleQuote,
   selectQuotFromObject,
 } from "./tools/checkQuotBeforeShowing.js";
-import { ArrayStorage } from "./arrayStorage.js";
+import { ArrayStorage } from "./tools/arrayStorage.js";
 
 const urlRandom = "https://api.chucknorris.io/jokes/random";
 const categoriesUrl = "https://api.chucknorris.io/jokes/categories";
