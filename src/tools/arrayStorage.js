@@ -10,11 +10,11 @@ class ArrayStorage {
 
   /**
    * Get value of this key from the local storage
-   * @returns {Array} list of values from the key on the local storage
+   * @returns {} list of values from the key on the local storage
    */
   get() {
     if (!localStorage.getItem(this.key)) {
-      localStorage.setItem(this.key, JSON.stringify(this.list));
+      localStorage.setItem(this.key, JSON.stringify([]));
     }
     return JSON.parse(localStorage.getItem(this.key));
   }
