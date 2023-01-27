@@ -9,16 +9,15 @@ const changeBackground = document.querySelector("#change-background");
 changeBackground.addEventListener("click", changeBackgroundByClick);
 
 function changeBackgroundByClick() {
-  const html=document.documentElement;
+  const html = document.documentElement;
   html.classList.toggle("dark");
-  if (html.classList.contains("dark")){
-    changeBackground.src="img/dark-bg.png"
-    changeBackground.alt="Switch to light background color"
-  }
-  else {
-    changeBackground.src="img/light-bg.png"
-    changeBackground.alt="Switch to dark background color"
+  if (html.classList.contains("dark")) {
+    changeBackground.src = "img/dark-bg.png";
+    changeBackground.alt = "Switch to light background color";
+  } else {
+    changeBackground.src = "img/light-bg.png";
+    changeBackground.alt = "Switch to dark background color";
   }
 }
 
-// export { changeBackgroundByClick };
+export { changeBackgroundByClick };
