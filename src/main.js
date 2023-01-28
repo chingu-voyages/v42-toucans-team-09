@@ -11,7 +11,6 @@ import {
   checkSingleQuote,
   selectQuotFromObject,
 } from "./tools/checkQuotBeforeShowing.js";
-import { ArrayStorage } from "./tools/arrayStorage.js";
 
 const urlRandom = "https://api.chucknorris.io/jokes/random";
 const categoriesUrl = "https://api.chucknorris.io/jokes/categories";
@@ -26,7 +25,7 @@ const generatedFactsNumber = document.getElementById("generated-facts-number");
 const quotesHistory = document.getElementById("quotes-history");
 
 // instance of the ArrayStorage object
-const storage = new ArrayStorage("quotes-history");
+const storage = [];
 
 //Minus 1 so that the quote is not considered when loading the page
 let generatedFactsCounter = -1;
@@ -73,7 +72,7 @@ function checkData(result) {
     const randomSearch = selectQuotFromObject(result);
     if (randomSearch) {
       generatedFactsCounter += 1;
-      storage.append(randomSearch);
+      storage.push(randomSearch);
       showQuote(randomSearch);
     } else {
       showQuote(nothingToShow);
@@ -83,7 +82,7 @@ function checkData(result) {
     // if quote can be displayed show it
     if (canBeDisplayed) {
       generatedFactsCounter += 1;
-      storage.append(result.value);
+      storage.push(result.value);
       showQuote(result.value);
     } else {
       apiCall(urlRandom);
@@ -99,12 +98,13 @@ function showQuote(result) {
   generatedFactsNumber.textContent = generatedFactsCounter;
 
   quotesHistory.innerHTML = "";
-  for (let i = 0; i < storage.list.length; i++) {
-    const quote = storage.list[i];
+  for (let i = storage.length; i > storage.length-6; i--) {
+    const quote = storage[i];
     const quoteHystoryElement = document.createElement("p");
     quoteHystoryElement.textContent = quote;
+    // TODO: you can add some style with tailwind here
     quoteHystoryElement.className = "m-6";
-    quotesHistory.insertBefore(quoteHystoryElement, quotesHistory.firstChild);
+    quotesHistory.append(quoteHystoryElement);
   }
 }
 
