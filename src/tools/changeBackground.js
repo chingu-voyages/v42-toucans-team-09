@@ -1,7 +1,3 @@
-// import {
-//   changeBackground
-// } from "../main.js"
-
 /* - Background is changhing when it clickes on the icon
 - We use google icons so we need to rewrite text content inside element if we want to replace the icon */
 const changeBackground = document.querySelector("#change-background");
