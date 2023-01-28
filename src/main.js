@@ -72,9 +72,9 @@ function checkData(result) {
   if (result.total > 0) {
     const randomSearch = selectQuotFromObject(result);
     if (randomSearch) {
+      generatedFactsCounter += 1;
       storage.append(randomSearch);
       showQuote(randomSearch);
-      generatedFactsCounter += 1;
     } else {
       showQuote(nothingToShow);
     }
@@ -82,9 +82,9 @@ function checkData(result) {
     const canBeDisplayed = checkSingleQuote(result);
     // if quote can be displayed show it
     if (canBeDisplayed) {
+      generatedFactsCounter += 1;
       storage.append(result.value);
       showQuote(result.value);
-      generatedFactsCounter += 1;
     } else {
       apiCall(urlRandom);
     }
@@ -95,17 +95,16 @@ function checkData(result) {
 
 /*Add quote to the page */
 function showQuote(result) {
-  
   quotes.innerHTML = result;
   generatedFactsNumber.textContent = generatedFactsCounter;
-  
+
   quotesHistory.innerHTML = "";
   for (let i = 0; i < storage.list.length; i++) {
     const quote = storage.list[i];
-    const quoteHystoryElement = document.createElement('p');
+    const quoteHystoryElement = document.createElement("p");
     quoteHystoryElement.textContent = quote;
-    quoteHystoryElement.className = 'm-6';
-    quotesHistory.insertBefore(quoteHystoryElement, quotesHistory.firstChild)
+    quoteHystoryElement.className = "m-6";
+    quotesHistory.insertBefore(quoteHystoryElement, quotesHistory.firstChild);
   }
 }
 
