@@ -547,6 +547,18 @@ video {
   }
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 .absolute {
   position: absolute;
 }
@@ -634,6 +646,10 @@ video {
   margin-left: 5rem;
 }
 
+.block {
+  display: block;
+}
+
 .inline-block {
   display: inline-block;
 }
@@ -660,6 +676,22 @@ video {
 
 .h-96 {
   height: 24rem;
+}
+
+.h-2 {
+  height: 0.5rem;
+}
+
+.h-3 {
+  height: 0.75rem;
+}
+
+.h-10 {
+  height: 2.5rem;
+}
+
+.h-11 {
+  height: 2.75rem;
 }
 
 .w-7 {
@@ -700,6 +732,26 @@ video {
 
 .w-72 {
   width: 18rem;
+}
+
+.w-5 {
+  width: 1.25rem;
+}
+
+.w-2 {
+  width: 0.5rem;
+}
+
+.w-3 {
+  width: 0.75rem;
+}
+
+.w-10 {
+  width: 2.5rem;
+}
+
+.w-11 {
+  width: 2.75rem;
 }
 
 .max-w-full {
@@ -756,6 +808,18 @@ video {
   gap: 0.25rem;
 }
 
+.gap-3 {
+  gap: 0.75rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
 .gap-y-7 {
   row-gap: 1.75rem;
 }
@@ -770,6 +834,10 @@ video {
 
 .whitespace-nowrap {
   white-space: nowrap;
+}
+
+.break-all {
+  word-break: break-all;
 }
 
 .rounded-md {
@@ -842,6 +910,10 @@ video {
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
+.fill-white {
+  fill: #fff;
 }
 
 .p-4 {
@@ -1024,6 +1096,19 @@ video {
   text-align: center;
 }
 
+.hover\:bg-sky-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(3 105 161 / var(--tw-bg-opacity));
+}
+
+.hover\:fill-sky-700:hover {
+  fill: #0369a1;
+}
+
+.hover\:fill-gray-400:hover {
+  fill: #9ca3af;
+}
+
 .dark .dark\:border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
@@ -1039,6 +1124,10 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.dark .dark\:fill-black {
+  fill: #000;
+}
+
 .dark .dark\:text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1047,6 +1136,10 @@ video {
 .dark .dark\:text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.dark .dark\:hover\:fill-gray-400:hover {
+  fill: #9ca3af;
 }
 
 @media (min-width: 580px) {
@@ -1271,9 +1364,17 @@ video {
     background-color: rgb(250 204 21 / var(--tw-bg-opacity));
   }
 
+  .md\:hover\:fill-gray-400:hover {
+    fill: #9ca3af;
+  }
+
   .md\:hover\:text-yellow-400:hover {
     --tw-text-opacity: 1;
     color: rgb(250 204 21 / var(--tw-text-opacity));
+  }
+
+  .dark .dark\:md\:hover\:fill-gray-400:hover {
+    fill: #9ca3af;
   }
 }
 
