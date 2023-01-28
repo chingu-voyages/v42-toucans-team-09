@@ -1,20 +1,8 @@
-import { apiCall } from "../api/api.js";
-import {
-  canBeDisplayed,
-  excludedWords,
-  excludedCategories,
-} from "./filterTextToShow.js";
-import { showQuote, urlRandom } from "../main.js";
+import { canBeDisplayed, excludedWords } from "./filterTextToShow.js";
 
 function checkSingleQuote(result) {
-  //check dirty words
-  const haveNotDirtyWords = canBeDisplayed(result.value, excludedWords);
-  // if quote can be displayed show it
-  if (haveNotDirtyWords) {
-    showQuote(result.value);
-  } else {
-    apiCall(urlRandom);
-  }
+  //check excluded words
+  return canBeDisplayed(result.value, excludedWords);
 }
 
 /**
@@ -39,7 +27,7 @@ function selectQuotFromObject(data) {
   let randomInt = getRandomInt(filterQuotes.length);
 
   //return quote
-  return filterQuotes[randomInt] || 0;
+  return filterQuotes[randomInt] || null;
 }
 
 function getRandomInt(max) {

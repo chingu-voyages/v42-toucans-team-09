@@ -11,6 +11,7 @@ import {
   checkSingleQuote,
   selectQuotFromObject,
 } from "./tools/checkQuotBeforeShowing.js";
+import { ArrayStorage } from "./tools/arrayStorage.js";
 
 const urlRandom = "https://api.chucknorris.io/jokes/random";
 const categoriesUrl = "https://api.chucknorris.io/jokes/categories";
@@ -22,6 +23,10 @@ const formInput = document.querySelector("#form-input");
 const quotes = document.querySelector("#quotes-text");
 const categorySelect = document.getElementById("categories");
 const generatedFactsNumber = document.getElementById("generated-facts-number");
+const quotesHistory = document.getElementById("quotes-history");
+
+// instance of the ArrayStorage object
+const storage = new ArrayStorage("quotes-history");
 
 //Minus 1 so that the quote is not considered when loading the page
 let generatedFactsCounter = -1;
@@ -65,16 +70,24 @@ function checkData(result) {
   <small>Let's try another word:)</small>`;
 
   if (result.total > 0) {
-    let randomSearch = selectQuotFromObject(result);
+    const randomSearch = selectQuotFromObject(result);
     if (randomSearch) {
-      generatedFactsCounter += 1;
+      storage.append(randomSearch);
       showQuote(randomSearch);
+      generatedFactsCounter += 1;
     } else {
       showQuote(nothingToShow);
     }
   } else if (result.id) {
-    generatedFactsCounter += 1;
-    checkSingleQuote(result);
+    const canBeDisplayed = checkSingleQuote(result);
+    // if quote can be displayed show it
+    if (canBeDisplayed) {
+      storage.append(result.value);
+      showQuote(result.value);
+      generatedFactsCounter += 1;
+    } else {
+      apiCall(urlRandom);
+    }
   } else {
     showQuote(nothingToShow);
   }
@@ -82,8 +95,18 @@ function checkData(result) {
 
 /*Add quote to the page */
 function showQuote(result) {
+  
   quotes.innerHTML = result;
   generatedFactsNumber.textContent = generatedFactsCounter;
+  
+  quotesHistory.innerHTML = "";
+  for (let i = 0; i < storage.list.length; i++) {
+    const quote = storage.list[i];
+    const quoteHystoryElement = document.createElement('p');
+    quoteHystoryElement.textContent = quote;
+    quoteHystoryElement.className = 'm-6';
+    quotesHistory.insertBefore(quoteHystoryElement, quotesHistory.firstChild)
+  }
 }
 
 /*function generate random quote and refresh categories when the page is loading */
