@@ -27,8 +27,7 @@ const quotesHistory = document.getElementById("quotes-history");
 // instance of the ArrayStorage object
 const storage = [];
 
-//Minus 1 so that the quote is not considered when loading the page
-let generatedFactsCounter = -1;
+let generatedFactsCounter = 0;
 
 categorySelect.addEventListener("change", () => {
   clearInputField();
@@ -98,7 +97,7 @@ function showQuote(result) {
   generatedFactsNumber.textContent = generatedFactsCounter;
 
   quotesHistory.innerHTML = "";
-  for (let i = storage.length; i > storage.length-6; i--) {
+  for (let i = storage.length; i > storage.length - 6; i--) {
     const quote = storage[i];
     const quoteHystoryElement = document.createElement("p");
     quoteHystoryElement.textContent = quote;
@@ -108,9 +107,10 @@ function showQuote(result) {
   }
 }
 
-/*function generate random quote and refresh categories when the page is loading */
+/*function shows welcome quote and refresh categories when the page is loading */
 (function onLoad() {
-  apiCall(urlRandom);
+  quotes.innerHTML = `<span class="text-slate-400 text-3xl md:text-4xl	break-normal">👋To get started click generate random, search or category below ⬇️</span>`;
+
   refreshAvailableCategories();
 })();
 
