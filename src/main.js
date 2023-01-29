@@ -107,7 +107,7 @@ function showQuote(result) {
   }
 }
 
-/*function generate random quote and refresh categories when the page is loading */
+/*function shows welcome quote and refresh categories when the page is loading */
 (function onLoad() {
   quotes.innerHTML = `<span class="text-slate-400 text-3xl md:text-4xl	break-normal">👋To get started click generate random, search or category below ⬇️</span>`;
 
