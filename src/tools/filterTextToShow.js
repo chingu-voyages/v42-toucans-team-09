@@ -1,28 +1,25 @@
 const religionWords = [
-  "Muhammad",
-  "Mohammed",
-  "Prophet",
-  "Islam",
-  "Solomon",
-  "Christian",
-  "God",
-  "Goddam",
-  "Jesus",
-  "Jesus Christ",
+  "muhammad",
+  "mohammed",
+  "prophet",
+  "solomon",
+  "god",
+  "goddam",
+  "jesus",
+  "jesus Christ",
   "religious",
   "irreligious",
   "pagan",
-  "Islam",
+  "islam",
   "faith",
-  "Christianity",
+  "christianity",
   "sacred",
   "church",
-  "Bible",
-  "Muslim",
-  "Christian",
+  "bible",
+  "muslim",
+  "christian",
   "convert",
   "holy",
-  "infidel",
   "devout",
   "unreligious",
   "secular",
@@ -33,11 +30,11 @@ const religionWords = [
   "votary",
   "ministry",
   "shamanism",
-  "Shinto",
+  "shinto",
   "divinity",
   "heathen",
   "devotee",
-  "Judaism",
+  "judaism",
   "voodoo",
   "religionism",
   "religionize",
@@ -58,50 +55,6 @@ const religionWords = [
 ];
 
 const badWords = [
-  "Arse",
-  "Bloody",
-  "Bugger",
-  "Cow",
-  "Crap",
-  "Damn",
-  "Ginger",
-  "Git",
-  "Minger",
-  "Sod-off",
-  "Arsehole",
-  "Balls",
-  "Bint",
-  "Bitch",
-  "Bollocks",
-  "Bullshit",
-  "Feck",
-  "Munter",
-  "Pissed",
-  "Shit",
-  "Son of a bitch",
-  "Tits",
-  "Bastard",
-  "Beaver",
-  "Beef curtains",
-  "Bellend",
-  "Bloodclaat",
-  "Clunge",
-  "Cock",
-  "Dick",
-  "Dickhead",
-  "Fanny",
-  "Flaps",
-  "Gash",
-  "Knob",
-  "Minge",
-  "Prick",
-  "Punani",
-  "Pussy",
-  "Snatch",
-  "Twat",
-  "Cunt",
-  "Fuck",
-  "Motherfucker",
   "2 girls 1 cup",
   "2g1c",
   "4r5e",
@@ -1018,7 +971,6 @@ const badWords = [
   "he-she",
   "hitler",
   "hiv",
-  "ho",
   "hoar",
   "hoare",
   "hobag",
@@ -1840,8 +1792,6 @@ const badWords = [
 
 const excludedWords = [...religionWords, ...badWords];
 
-const excludedCategories = ["explicit", "political", "religion"];
-
 /**
  * Check the text if it can be displayed or not.
  *
@@ -1854,7 +1804,6 @@ function canBeDisplayed(text, filters) {
   const textToFilter = text.toLowerCase();
   const numberOfFilters = filters.length;
   for (let i = 0; i < numberOfFilters; i++) {
-    console.log("checking " + i, "/" + (badWords.length + religionWords.length));
     let filter = filters[i];
     filter = filter.toLowerCase();
     if (textToFilter.includes(filter)) {
@@ -1864,4 +1813,4 @@ function canBeDisplayed(text, filters) {
   return true;
 }
 
-export { canBeDisplayed, excludedCategories, excludedWords };
+export { canBeDisplayed, excludedWords };

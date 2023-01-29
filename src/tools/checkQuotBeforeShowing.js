@@ -12,7 +12,7 @@ function checkSingleQuote(result) {
 function selectQuotFromObject(data) {
   const results = data;
   let quotes = results.result;
-  let filterQuotes = Array("");
+  let filterQuotes = Array();
 
   // Check all quote in quotes
   for (let index = 0; index < quotes.length; index++) {

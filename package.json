@@ -2,6 +2,7 @@
   "scripts":{
     "start":"npx tailwindcss -i ./style/input.css -o ./style/style.css --watch"
   },
+  "type": "module",
   "devDependencies": {
     "tailwindcss": "^3.2.4"
   }
