@@ -18,6 +18,7 @@ module.exports = {
     extend: {
       gridTemplateRows: {
         150: "repeat(5, 150px)",
+        180: "repeat(5, 180px)",
       },
       boxShadow: {
         btn: "0px 1.4433px 10.8247px 0.72165px rgba(0, 0, 0, 0.25)",

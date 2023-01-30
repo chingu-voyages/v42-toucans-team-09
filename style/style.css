@@ -597,11 +597,6 @@ video {
   margin-bottom: 1rem;
 }
 
-.mx-6 {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-}
-
 .mr-8 {
   margin-right: 2rem;
 }
@@ -636,10 +631,6 @@ video {
 
 .ml-6 {
   margin-left: 1.5rem;
-}
-
-.ml-20 {
-  margin-left: 5rem;
 }
 
 .block {
@@ -748,12 +739,12 @@ video {
   grid-template-columns: 50px;
 }
 
-.grid-cols-\[30px\] {
-  grid-template-columns: 30px;
-}
-
 .grid-rows-150 {
   grid-template-rows: repeat(5, 150px);
+}
+
+.grid-rows-180 {
+  grid-template-rows: repeat(5, 180px);
 }
 
 .flex-row {
@@ -913,10 +904,6 @@ video {
   padding: 0.5rem;
 }
 
-.p-3 {
-  padding: 0.75rem;
-}
-
 .px-2\.5 {
   padding-left: 0.625rem;
   padding-right: 0.625rem;
@@ -962,11 +949,6 @@ video {
   padding-bottom: 2rem;
 }
 
-.py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-}
-
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -998,14 +980,6 @@ video {
 
 .pl-8 {
   padding-left: 2rem;
-}
-
-.pl-2 {
-  padding-left: 0.5rem;
-}
-
-.pr-4 {
-  padding-right: 1rem;
 }
 
 .text-center {
@@ -1163,6 +1137,10 @@ video {
     margin-bottom: 2.5rem;
   }
 
+  .sm\:block {
+    display: block;
+  }
+
   .sm\:inline-block {
     display: inline-block;
   }
@@ -1177,6 +1155,10 @@ video {
 
   .sm\:grid-cols-\[50px\] {
     grid-template-columns: 50px;
+  }
+
+  .sm\:grid-rows-150 {
+    grid-template-rows: repeat(5, 150px);
   }
 
   .sm\:py-7 {
@@ -1250,12 +1232,12 @@ video {
     margin-bottom: 2rem;
   }
 
-  .md\:mb-14 {
-    margin-bottom: 3.5rem;
-  }
-
   .md\:ml-20 {
     margin-left: 5rem;
+  }
+
+  .md\:mb-14 {
+    margin-bottom: 3.5rem;
   }
 
   .md\:inline {
@@ -1348,10 +1330,6 @@ video {
     padding-bottom: 14rem;
   }
 
-  .md\:pr-5 {
-    padding-right: 1.25rem;
-  }
-
   .md\:text-left {
     text-align: left;
   }
@@ -1429,18 +1407,9 @@ video {
     max-width: 56rem;
   }
 
-  .lg\:grid-cols-\[100px\] {
-    grid-template-columns: 100px;
-  }
-
   .lg\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
-  }
-
-  .lg\:px-14 {
-    padding-left: 3.5rem;
-    padding-right: 3.5rem;
   }
 
   .lg\:text-7xl {
