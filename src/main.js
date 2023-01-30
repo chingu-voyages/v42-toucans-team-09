@@ -102,8 +102,10 @@ function showQuote(result) {
     const quoteHystoryElement = document.createElement("p");
     quoteHystoryElement.textContent = quote;
     // TODO: you can add some style with tailwind here
-    quoteHystoryElement.className = "m-6";
-    quotesHistory.append(quoteHystoryElement);
+    quoteHystoryElement.className = "lg:text-xl text-center";
+    if (quote !== undefined) {
+      quotesHistory.append(quoteHystoryElement);
+    }
   }
 }
 
