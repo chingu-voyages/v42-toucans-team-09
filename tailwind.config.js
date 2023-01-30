@@ -16,6 +16,9 @@ module.exports = {
       sans: ["Roboto", "sans-serif"],
     },
     extend: {
+      gridTemplateRows: {
+        150: "repeat(5, 150px)",
+      },
       boxShadow: {
         btn: "0px 1.4433px 10.8247px 0.72165px rgba(0, 0, 0, 0.25)",
       },

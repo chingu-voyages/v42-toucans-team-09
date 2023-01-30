@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style/style.css" />
     <title>Serious.ly</title>
+    <link rel="icon" type="image/x-icon" href="img/light-bg.png" />
   </head>
   <body class="dark:bg-black">
     <!-- NAVBAR -->
@@ -42,7 +43,9 @@
         id="random-btn"
         class="bg-black text-white p-4 rounded-xl dark:bg-white dark:text-black shadow-btn relative">
         <span class="absolute left-5 top-3 lg:top-3.5">👉</span>
-        <p class="px-6 pl-8 font-semibold lg:text-lg">Generate Random</p>
+        <span class="block px-6 pl-8 font-semibold lg:text-lg"
+          >Generate Random</span
+        >
       </button>
     </div>
 
@@ -55,8 +58,8 @@
         placeholder="🔎 Search Quotes" />
       <button
         class="my-4 p-2 w-56 mx-auto border-2 dark:border-white dark:text-white border-stone-600 md:col-span-1 md:w-full rounded-lg">
-        <p class="generate-btn text-lg font-semibold">Generate</p>
-        <p class="text-xs">Search/Category</p>
+        <span class="block generate-btn text-lg font-semibold">Generate</span>
+        <span class="block text-xs">Search/Category</span>
       </button>
       <select
         id="categories"
@@ -67,14 +70,35 @@
 
     <!-- QUOTES HISTORY SECTION -->
     <div class="">
-      <p class="text-3xl font-semibold ml-20 my-4 dark:text-white">
+      <p
+        class="text-center md:text-left text-3xl font-semibold md:ml-20 my-4 dark:text-white">
         Quotes History
       </p>
       <div
-        id="quotes-history"
-        class="bg-gray-100 flex flex-col text-center mx-6 mb-6 sm:mx-10 sm:mb-10 md:mx-14 md:mb-14 lg:mx-16 lg:mb-16"></div>
+        class="bg-gray-100 flex items-center px-1 sm:pl-2 sm:pr-4 py-6 md:py-10 md:px-14 sm:mx-10 sm:mb-10 md:mx-14 md:mb-14 lg:mx-16 lg:mb-16">
+        <ul
+          class="grid grid-rows-150 grid-cols-[30px] sm:grid-cols-[50px] md:grid-cols-[100px] place-items-center">
+          <li class="">
+            <img class="w-30" src="img/quotes-history/sign.png" alt="" />
+          </li>
+          <li>
+            <img class="w-30" src="img/quotes-history/sign.png" alt="" />
+          </li>
+          <li>
+            <img class="w-30" src="img/quotes-history/sign.png" alt="" />
+          </li>
+          <li>
+            <img class="w-30" src="img/quotes-history/sign.png" alt="" />
+          </li>
+          <li>
+            <img class="w-30" src="img/quotes-history/sign.png" alt="" />
+          </li>
+        </ul>
+        <div
+          class="grid grid-rows-150 w-full place-items-center"
+          id="quotes-history"></div>
+      </div>
     </div>
-
     <script src="src/main.js" type="module"></script>
   </body>
 </html>
