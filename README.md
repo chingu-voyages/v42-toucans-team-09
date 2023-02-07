@@ -42,7 +42,7 @@ The app will generate a funny quotes for you
 
 <h2>Meet The Team from Toucans 9 👥 </h2>
 
-<img src="https://user-images.githubusercontent.com/105977653/217186527-6ee46798-790a-44ea-881f-f552fe7a5cb9.png"/>
+<img src="https://user-images.githubusercontent.com/105977653/217196613-2ab9ea86-6430-43e6-b8fa-a9dceecbb928.png"/>
 
 - Front End Engineer 1 [@Yana](https://github.com/Yasya23)
 - Front End Engineer 2 [@Andrei](https://github.com/andriciab)
