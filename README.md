@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://chingu-voyages.github.io/v42-toucans-team-09">
-    <img alt="Web App" src="https://user-images.githubusercontent.com/105977653/215727127-93fb9368-5c38-451e-9aae-755d85901ddc.png">
+    <img alt="Web App" src="https://user-images.githubusercontent.com/105977653/217185404-82bc81a5-8839-4971-aa7a-a4ac1ef8c4e4.png">
   </a>
 </p>
 
@@ -31,13 +31,18 @@ The app will generate a funny quotes for you
 
 <h2> What Feature Does it Have💡 </h2>
 
-<h3> 🌙 Dark Mode </h3>
+
 <h3> 📱 Responsive on Any Device </h3>
-<h3> 🔽 Generate More Fun With Animation </h3>
+<img src="https://user-images.githubusercontent.com/105977653/217185600-467b2751-845b-400b-b31f-a0e296070fa4.png"/>
+
+<h3> 🌙 Dark Mode </h3>
+<img src="https://user-images.githubusercontent.com/105977653/217186134-d51ea332-1bba-464e-adbf-b126300d526d.png"/>
 
 
 
 <h2>Meet The Team from Toucans 9 👥 </h2>
+
+<img src="https://user-images.githubusercontent.com/105977653/217186527-6ee46798-790a-44ea-881f-f552fe7a5cb9.png"/>
 
 - Front End Engineer 1 [@Yana](https://github.com/Yasya23)
 - Front End Engineer 2 [@Andrei](https://github.com/andriciab)
