@@ -6,7 +6,7 @@
 
 <p align="center">
 
-<img src="https://chingu-voyages.github.io/v42-toucans-team-09/img/programes/programes-2x.webp" width="500" height ="50"/>
+<img src="https://user-images.githubusercontent.com/105977653/217183729-43513741-857a-4462-8048-305cbd1644a0.png" width="500" height ="50"/>
 </p>
 
 <p align="center">
