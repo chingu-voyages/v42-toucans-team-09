@@ -97,7 +97,7 @@ function showQuote(result) {
   autoplay
   loop
   mode="normal"
-  src="../img/animation/1.lottie"
+  src="img/animation/1.lottie"
   style="width: 200px"
 >
 </dotlottie-player>
