@@ -93,22 +93,33 @@ function checkData(result) {
 
 /*Add quote to the page */
 function showQuote(result) {
-  quotes.innerHTML = result;
-  generatedFactsNumber.textContent = generatedFactsCounter;
-  quotesHistory.innerHTML = "";
-  for (let i = storage.length; i > storage.length - 6; i--) {
-    const quote = storage[i];
-    const quoteHystoryElement = document.createElement("div");
-    // TODO: you can add some style with tailwind here
-    quoteHystoryElement.className =
-      "flex gap-x-3 sm:gap-x-10 md:gap-x-16 xl:gap-x-36 items-center w-full lg:w-4/5 xl:w-2/3";
-    quoteHystoryElement.innerHTML = `
+  quotes.innerHTML = `<dotlottie-player
+  autoplay
+  loop
+  mode="normal"
+  src="../img/animation/1.lottie"
+  style="width: 200px"
+>
+</dotlottie-player>
+`;
+  setTimeout(function () {
+    quotes.innerHTML = result;
+    generatedFactsNumber.textContent = generatedFactsCounter;
+    quotesHistory.innerHTML = "";
+    for (let i = storage.length; i > storage.length - 6; i--) {
+      const quote = storage[i];
+      const quoteHystoryElement = document.createElement("div");
+      // TODO: you can add some style with tailwind here
+      quoteHystoryElement.className =
+        "flex gap-x-3 sm:gap-x-10 md:gap-x-16 xl:gap-x-36 items-center w-full lg:w-4/5 xl:w-2/3";
+      quoteHystoryElement.innerHTML = `
     <div class="text-base sm:text-2xl md:text-3xl lg:text-4xl">☑️</div>
     <p class="grow text-center md:text-xl break-words">${quote}</p>`;
-    if (quote !== undefined) {
-      quotesHistory.append(quoteHystoryElement);
+      if (quote !== undefined) {
+        quotesHistory.append(quoteHystoryElement);
+      }
     }
-  }
+  }, 2000);
 }
 
 /*function shows welcome quote and refresh categories when the page is loading */
