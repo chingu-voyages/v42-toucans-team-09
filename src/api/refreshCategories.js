@@ -16,7 +16,7 @@ function displayCategories() {
     }
     let option = document.createElement("option");
     option.value = category;
-    option.textContent = category;
+    option.textContent = category.charAt(0).toUpperCase() + category.slice(1);
     categorySelect.appendChild(option);
   }
 }
