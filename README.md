@@ -65,5 +65,5 @@ Try The App Now 👇
 <a href="https://chingu-voyages.github.io/v42-toucans-team-09">
 <img src="https://user-images.githubusercontent.com/105977653/217187051-c45b53bd-c43b-4f2e-834e-229f137d1d41.png">
 </a>
-=======
+
 
